@@ -34,6 +34,10 @@ module ActiveadminSettings
       (ActiveadminSettings.all_settings[name]["description"] ||= "").to_s
     end
 
+    def options
+      eval(ActiveadminSettings.all_settings[name]["options"])
+    end
+
     def default_value
       val = (ActiveadminSettings.all_settings[name]["default_value"] ||= "").to_s
 

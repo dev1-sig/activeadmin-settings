@@ -33,6 +33,8 @@
                 <%= f.input :string,
                             :as => :text,
                             :input_html => { :class => "settings-redactor" } %>
+              <% when 'dropdown' %>
+                <%= f.input :string, as: :select, collection: setting.options, include_blank: false %>
               <% else %>
                 <%= f.input :string, :placeholder => "Default: " + setting.default_value %>
               <% end %>
